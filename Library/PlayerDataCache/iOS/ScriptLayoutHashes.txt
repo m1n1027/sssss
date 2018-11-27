@@ -1,6 +1,6 @@
 iOS
 PlayerPath?
-/Users/ryo/20181123/1126
+/Users/ryo/DebugBuild
 SceneListBegin?
 Assets/Scenes/UnchimanEX.unity
 Assets/Scripts/Punicon/aa.unity
