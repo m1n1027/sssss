@@ -131,7 +131,7 @@ public class PlayerController : MonoBehaviour {
             isAvoidance = true;
             //フリックした方向にプレイヤーを回転
             var vec = ogtInput.GetDirection();
-            Vector3 dir = new Vector3(vec.x, 0, vec.y);
+            Vector3 dir = new Vector3(vec.x, 0, vec.y)*3;
             dir += transform.position;
             transform.LookAt(dir);
             return false;
@@ -150,15 +150,15 @@ public class PlayerController : MonoBehaviour {
         return false;
 
     }
-    IEnumerator Avoidance()
-    {
-        bool isPlaying = true;
-        while(!isPlaying)
-        {
-            yield return null;
-        }
+    //IEnumerator Avoidance()
+    //{
+    //    bool isPlaying = true;
+    //    while(!isPlaying)
+    //    {
+    //        yield return null;
+    //    }
 
-    }
+    //}
 
     IEnumerator MoveCoroutine(Vector3 movePower)
     {
