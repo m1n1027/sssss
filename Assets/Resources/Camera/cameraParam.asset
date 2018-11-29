@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd43d720bdf553249bdb08278ffbd95a, type: 3}
   m_Name: cameraParam
   m_EditorClassIdentifier: 
-  shakeWidth: 0.1
-  shakeHeight: 0.1
-  shakePower: 5
-  shakeInterval: 0
+  shakeWidth: 0.898
+  shakeHeight: 0.898
+  shakePower: 2.28
+  shakeInterval: 0.451

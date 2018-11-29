@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using puniState;
+
 
 public class PlayerController : MonoBehaviour {
     private bool isAvoidance = false;
-
-    //private InputManager inputManager;
     private punikon ogtInput;
     public Text dtext;
     /// <summary>
@@ -34,16 +32,17 @@ public class PlayerController : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.A)) { ActionState = null; ActionState = StartCoroutine(Attack01()); }
         //if (Input.touchCount < 1) return;
-        int state = ogtInput.GetState();
+        //int state = ogtInput.GetState();
+        var state = TouchParam.GetInstance.touchState;
         switch (state)
         {
             // Idle
-            case (int)TouchState.NONE:
+            case TouchState.NONE:
                 //state = pAnim.IdleState;
                 break;
             // Attack
-            case (int)TouchState.Tap:
-                if (state == 1)
+            case TouchState.Tap:
+                if (state == TouchState.Move)
                 {
                     StopCoroutine(ActionState);
                     ActionState = null;
@@ -51,17 +50,16 @@ public class PlayerController : MonoBehaviour {
                 if (ActionState == null) ActionState = StartCoroutine(Attack01());
                 break;
             // Move
-            case (int)TouchState.Move:
+            case TouchState.Move:
                 if (ActionState == null) ActionState = StartCoroutine(Move());
                 break;
 
             // Avoidance
-            case (int)TouchState.Flick:
-                if (ActionState == null && state != pAnim.AvoidanceState)
+            case TouchState.Flick:
+                if (ActionState == null && (int)state != pAnim.AvoidanceState)
                 {
                     isAvoidance = false;
                     pAnim.State = pAnim.AvoidanceState;
-                    //ActionState = StartCoroutine(Avoidance());
                 }
 
                 break;
@@ -79,12 +77,15 @@ public class PlayerController : MonoBehaviour {
     IEnumerator Move()
     {
         state = pAnim.MoveState;
-        pAnim.State = pAnim.MoveState; while (true)
+        pAnim.State = pAnim.MoveState;
+        while (true)
         {
-            int state = ogtInput.GetState();
-            if (state == 1)
+            //int state = ogtInput.GetState();
+            var state = TouchParam.GetInstance.touchState;
+            if (state == TouchState.Move)
             {
-                var vec = ogtInput.GetDirection();
+                //var vec = ogtInput.GetDirection();
+                var vec = TouchParam.GetInstance.touchDirection;
                 Vector3 dir = new Vector3(vec.x, 0, vec.y);
                 dir += transform.position;
                 transform.LookAt(dir);
@@ -130,7 +131,8 @@ public class PlayerController : MonoBehaviour {
             pAnim.State = pAnim.AvoidanceState;
             isAvoidance = true;
             //フリックした方向にプレイヤーを回転
-            var vec = ogtInput.GetDirection();
+            //var vec = ogtInput.GetDirection();
+            var vec = TouchParam.GetInstance.touchDirection;
             Vector3 dir = new Vector3(vec.x, 0, vec.y)*3;
             dir += transform.position;
             transform.LookAt(dir);
@@ -141,7 +143,7 @@ public class PlayerController : MonoBehaviour {
         if (val >= 0.6f)        //終了
         {
             isAvoidance = false;
-            pAnim.State =(ogtInput.GetState() == (int)TouchState.Move)?pAnim.MoveState:pAnim.IdleState;
+            pAnim.State =(TouchParam.GetInstance.touchState == TouchState.Move)?pAnim.MoveState:pAnim.IdleState;
 
             return true;
         }
@@ -150,26 +152,5 @@ public class PlayerController : MonoBehaviour {
         return false;
 
     }
-    //IEnumerator Avoidance()
-    //{
-    //    bool isPlaying = true;
-    //    while(!isPlaying)
-    //    {
-    //        yield return null;
-    //    }
 
-    //}
-
-    IEnumerator MoveCoroutine(Vector3 movePower)
-    {
-        Vector3 beforePos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-        Vector3 afterPos = beforePos + movePower;
-        for (int i = 0; i < 6; i++)
-        {
-            transform.position = Vector3.Lerp(beforePos, afterPos, (float)i * 0.2f);
-            yield return null;
-        }
-
-        yield return null;
-    }
 }

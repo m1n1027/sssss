@@ -91,9 +91,25 @@ public class PuniconTest : MonoBehaviour
 
 	// Update is called once per frame
 	void Update () {
-        if (Punicon.GetPhase() == TouchPhase.Began) Begin();
-        if (Punicon.GetPhase() == TouchPhase.Moved) TrackingPunipuni();
-        if (Punicon.GetPhase() == TouchPhase.Ended) End();
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            switch (touch.phase)
+            {
+                case TouchPhase.Began:
+                    Begin();
+                    break;
+                case TouchPhase.Moved:
+                    TrackingPunipuni();
+                    break;
+                case TouchPhase.Ended:
+                    End();
+                    break;
+            }
+        }
+        //if (Punicon.GetPhase() == TouchPhase.Began) Begin();
+        //if (Punicon.GetPhase() == TouchPhase.Moved) TrackingPunipuni();
+        //if (Punicon.GetPhase() == TouchPhase.Ended) End();
 
         if (Input.GetMouseButtonDown(0)) Begin();
         if (Input.GetMouseButtonUp(0)) End();
