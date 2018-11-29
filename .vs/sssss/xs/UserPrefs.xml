@@ -1,10 +1,11 @@
 ﻿<Properties StartupConfiguration="{073D20D7-917B-1433-F7A6-6782A1CC776B}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Controller/PlayerAnimationController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Controller/PlayerController.cs">
     <Files>
-      <File FileName="Assets/Scripts/Controller/PlayerController.cs" Line="114" Column="45" />
+      <File FileName="Assets/Scripts/Controller/PlayerController.cs" Line="36" Column="1" />
       <File FileName="Assets/Scripts/punikon.cs" Line="34" Column="20" />
-      <File FileName="Assets/Scripts/Controller/PlayerAnimationController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Controller/PlayerAnimationController.cs" Line="16" Column="19" />
+      <File FileName="Assets/Scripts/param/TouchParam.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
