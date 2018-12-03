@@ -14,4 +14,4 @@ MonoBehaviour:
   shakeWidth: 0.898
   shakeHeight: 0.898
   shakePower: 2.28
-  shakeInterval: 0.451
+  shakeInterval: 0

@@ -2,10 +2,15 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Controller/PlayerController.cs">
     <Files>
-      <File FileName="Assets/Scripts/Controller/PlayerController.cs" Line="36" Column="1" />
-      <File FileName="Assets/Scripts/punikon.cs" Line="34" Column="20" />
-      <File FileName="Assets/Scripts/Controller/PlayerAnimationController.cs" Line="16" Column="19" />
-      <File FileName="Assets/Scripts/param/TouchParam.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Controller/PlayerController.cs" Line="58" Column="24" />
+      <File FileName="Assets/Scripts/Controller/PlayerAnimationController.cs" Line="17" Column="83" />
+      <File FileName="Assets/Scripts/param/TouchParam.cs" Line="48" Column="40" />
+      <File FileName="Assets/Scripts/SpawnEffectOnCollisition.cs" Line="12" Column="78" />
+      <File FileName="Assets/Suriyun/Scripts/controller.cs" Line="1" Column="1" />
+      <File FileName="Assets/Suriyun/Scripts/MouseOrbitImproved.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ParticleManager.cs" Line="8" Column="78" />
+      <File FileName="Assets/Scripts/Manager/CameraManager.cs" Line="124" Column="1" />
+      <File FileName="Assets/Scripts/Controller/PlayerCameraController.cs" Line="92" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

@@ -45,7 +45,7 @@ public class TouchParam : ScriptableObject {
     public Vector2 startPosition;
 
     //現在の指のポジション(Screen座標)
-    public Vector2 touchPosition;
+    public Vector2 currentTouchPosition;
 
     //開始位置から現在のタッチ位置のベクトル
     public Vector2 touchDirection;

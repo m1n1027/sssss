@@ -63,21 +63,20 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Controller\CameraController.cs" />
     <Compile Include="Assets\Scripts\Controller\PlayerAnimationController.cs" />
+    <Compile Include="Assets\Scripts\Controller\PlayerCameraController.cs" />
     <Compile Include="Assets\Scripts\Controller\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Manager\CameraManager.cs" />
     <Compile Include="Assets\Scripts\Manager\InputManager.cs" />
     <Compile Include="Assets\Scripts\Manager\ObjectManager.cs" />
-    <Compile Include="Assets\Scripts\moveText.cs" />
-    <Compile Include="Assets\Scripts\OGTInput.cs" />
     <Compile Include="Assets\Scripts\param\CameraParamTable.cs" />
     <Compile Include="Assets\Scripts\param\TouchParam.cs" />
-    <Compile Include="Assets\Scripts\PlayerCameraController.cs" />
+    <Compile Include="Assets\Scripts\ParticleManager.cs" />
     <Compile Include="Assets\Scripts\Punicon\Bezier.cs" />
     <Compile Include="Assets\Scripts\Punicon\PuniconMeshCreate.cs" />
     <Compile Include="Assets\Scripts\Punicon\PuniconTest.cs" />
+    <Compile Include="Assets\Scripts\Punicon\punikon.cs" />
     <Compile Include="Assets\Scripts\Punicon\PunipuniController.cs" />
     <Compile Include="Assets\Scripts\Punicon\PunipuniMesh.cs" />
-    <Compile Include="Assets\Scripts\punikon.cs" />
     <Compile Include="Assets\Scripts\SpawnEffectOnCollisition.cs" />
     <Compile Include="Assets\Suriyun\Scripts\AnimatorController.cs" />
     <Compile Include="Assets\Suriyun\Scripts\controller.cs" />

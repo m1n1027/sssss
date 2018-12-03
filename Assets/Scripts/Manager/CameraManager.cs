@@ -119,9 +119,9 @@ public class CameraManager : MonoBehaviour {
                 StartCoroutine(ShakeUpdate());
             }
         }
-
         
     }
+
     IEnumerator ShakeUpdate()
     {
         while(Input.GetKey(KeyCode.Z))
